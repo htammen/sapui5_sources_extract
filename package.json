@@ -1,0 +1,14 @@
+{
+  "name": "sapui5",
+  "version": "1.0.0",
+  "description": "Project for handling ui5 sources",
+  "main": "create_js_resources.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Helmut Tammen",
+  "license": "MIT",
+  "dependencies": {
+    "shelljs": "^0.7.0"
+  }
+}

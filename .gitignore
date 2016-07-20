@@ -1,0 +1,10 @@
+*.zip
+*.tgz
+*.jar
+1.28
+node_modules
+sapui5-1.36.8
+sapui5-1.36.8_compressed
+SAPUI5_1-1.28.9
+sapui5_128_entpackt
+typings
