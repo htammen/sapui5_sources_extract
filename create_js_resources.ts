@@ -46,16 +46,27 @@ try {
 		sh.mkdir('-p', targetDir + "/resources");
 	} else {
 		throw(e);
-		process.exit(2);
 	}
 }
 
+// extract the jar files
+//sh
+//	.find(sourceDir)
+//	.filter( function(fileName) {
+//		return fileName.match(/.*\.jar/)
+//	})
+//	.forEach(function(jarFile:string) {
+//		let raw = fs.createReadStream(jarFile);
+//		let folderName = jarFile.substring(0, jarFile.indexOf("."));
+//		let out = fs.createWriteStream(folderName);
+//		zlib.unzipSync()
+//	});
 
-console.log("targetDir: " + targetDir);
 
-sh.find(sourceDir)
+sh
+	.find(sourceDir)
 	.filter(
-		function(file) {
+		function(file:string) {
 			// filter all META-INF/resources directories
 			return file.match(/\/META-INF\/resources$/)
 		}
@@ -63,9 +74,11 @@ sh.find(sourceDir)
 	.forEach(
 		function(dir) {
 			if(dir) {
+				console.log(`extracting ${dir}`);
 				// copy the filtered directory into the target directory
 				sh.cp('-R', dir, targetDir);
 			}
 		}
 	);
 
+console.log("FINISHED");
