@@ -36,10 +36,18 @@ To run the script
 After a few minutes the js files are available in the `<targetDir>/resources` directory. You can reference 
 this directory in your sapui5 bootstrap code.
      
-# Adjusting the script
-To adjust the script you should *NOT* edit the js file but the ts file.
+# Changing the script
+To change the script you should *NOT* edit the js file but the ts file.
 
 * run `tsc -w *.ts` to start the watch task of tsc. This task compiles a new js file from the ts file every 
 time the latter file is changed.
 * Make changes to the ts file
 * run node with the js file
+
+# Finding jar files in Eclipse
+To find the jar files in eclipse cd into the `eclipse/plugins` directory and enter the following command
+
+```
+find . -regex "^.*com.sap.*1\.36.*\.jar"`
+```
+Replace `1.\36` with the release that is installed in your Eclipse
